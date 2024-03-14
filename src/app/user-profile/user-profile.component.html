@@ -1,0 +1,77 @@
+
+
+<body> 
+    <nav> 
+        <span>
+            <h1>Demo App</h1> 
+        </span>
+        <span>
+            <ul> 
+                <li><a href="#">Home</a></li> 
+                <li><a href="#">About Us</a></li> 
+                <li><a href="#">Jobs</a></li> 
+                <li><a href="#">Client</a></li> 
+                <li><a href="#">Employers</a></li>
+                <li><a href="#">Contact Us</a></li> 
+            </ul> 
+        </span>
+    </nav> 
+</body>
+
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <img [src]="getData().url" *ngIf="!photoUpdated" width="60%" height="100%">
+                </div>
+                <div style="margin-top: 5px;">
+                    <div class="btnDiv">
+                        <div [innerHtml]='msg' *ngIf="msg" style="color: red;"></div>
+                        <div><img [src]="imgUrl" *ngIf="photoUpdated" width="60%" height="100%"></div>
+                        <label for="files" style="color: #438c9c;" class="btn">Edit Photo</label>
+                        <input id="files" type="file" (change)="selectFile($event)" style="visibility: hidden;width: 20%!important;">
+                        <div *ngIf="msg" class="error-message">{{ msg }}</div>
+                    </div>
+
+                    <div class="btnDiv" style="padding :5px 0px 7px 5px !important">
+                        <button type="button" class="btn btn-primary-outline pull-right" style="color: #438c9c;" (click)="onEditProfile();" >Edit Profile </button>
+                    </div>
+                </div>
+            </td>
+
+            <td style="width: 60%;">
+                <div>
+                    I'm {{getData().firstName}} {{getData().lastName}} and I'm above {{getData().age}} years and you can send your emails to 
+                    {{getData().email}}.I live in the state of {{getData().state}} and I like to play <span *ngFor="let tag of getData().tags; let last = last">
+                        {{ tag.name }}{{ !last ? ', ' : '' }}
+                      </span>
+                      
+                      
+
+<span *ngIf="getData().isSubscribed">.Please send me newsletter</span> 
+                    .Please reach out to me on my phone number {{getData().phone}}.<br>
+                  <button  class="agreeBtn" > I agree</button> 
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+<!-- 
+firstname : {{getData().firstName}}
+<br>
+lastName : {{getData().lastName}}
+<br/>
+Email : {{getData().email}}
+<br/>
+Phone : {{getData().phone}}
+<br/>
+Age : {{getData().age}}
+<br/>
+State : {{getData().state}}
+<br/>
+Country : {{getData().country}}
+<br/>
+Address : {{getData().address}}
+<br/>
+Subscribed : {{getData().isSubscribed}} -->

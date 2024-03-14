@@ -1,0 +1,221 @@
+<body> 
+    <nav> 
+        <span>
+            <h1>Demo App</h1> 
+        </span>
+
+        <span>
+            <ul> 
+                <li><a href="#">Home</a></li> 
+                <li><a href="#">About Us</a></li> 
+                <li><a href="#">Jobs</a></li> 
+                <li><a href="#">Client</a></li> 
+                <li><a href="#">Employers</a></li>
+                <li><a href="#">Contact Us</a></li> 
+            </ul> 
+        </span>
+    </nav> 
+
+    <section class="search"> 
+        <h1><i>I'm looking for...</i></h1> 
+        <form action="#" method="get"> 
+            <input type="text" name="keywords" placeholder="Enter a job Description"> 
+            <button  class="btn btn-lg btn-outline-primary"> Search </button> 
+        </form> 
+    </section> 
+
+    <div style="text-align: center; margin-top: 20px;"><button class="btn btn-lg btn-outline-primary" 
+        (click)="open(content)">Register</button></div>
+    
+</body> 
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Register</h4>
+    </div>
+
+    <div class="modal-body">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <table>
+                <tr>
+                    <td width="30%" rowspan="3">
+                        <span *ngIf="displayProfileUpload">
+                            <img src="data:image/jpeg;base64,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" width="60%" height="100%">
+                        </span> 
+
+                        <div><img [src]="url" *ngIf="url" width="60%" height="100%"></div> 
+                        <label for="files" style="color: #438c9c;" class="btn">Upload Photo</label>
+                        <input id="files" type="file" (change)="selectFile($event)" accept="image/*"
+                            style="visibility: hidden;width: 69%!important;">
+                        <div *ngIf="msg" class="error-message">{{ msg }}</div>
+                    </td>
+
+                    <td  width="35%">
+                        <div class="form-group">
+                            <input type="text" formControlName="firstName" required pattern="[a-zA-Z][a-zA-Z ]+" maxlength="20" class="form-control" 
+                             placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }"/>
+                            <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
+                            <div *ngIf="f['firstName'].errors['pattern']">Only alphabetic characters are allowed, and length should not exceed 20 characters</div>
+                            <div *ngIf="f['firstName'].errors['maxlength']">Length should not exceed 20 characters</div>
+
+                            </div> 
+                        </div>
+                    </td>
+
+                    <td  width="35%">
+                        <div class="form-group">
+                            <input type="text" formControlName="lastName" class="form-control" 
+                             placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }" />
+                            <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                                <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <input type="text" formControlName="email" class="form-control" placeholder="Email" 
+                             [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                <div *ngIf="f['email'].errors['required']">Email is Required</div>
+                                <div *ngIf="f['email'].errors['email']">Invalid email format</div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <input type="text" formControlName="phone" class="form-control"
+                             placeholder="(541) 754-3010" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }" />
+                            <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+                                <div *ngIf="f['phone'].errors['required']">Phone is required</div>
+                                <div *ngIf="f['phone'].errors['pattern']">Invalid phone format.Phone number should be in this format "(541) 7xx-xxxx"</div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <div class="form-group"> 
+                            <div class="slidecontainer">
+                                Age <input type="range" min="18" max="60" value="18" formControlName="age" 
+                                 class="form-control slider" id="myRange" (change)="onAgeChange($event)" >    
+                            </div>
+                            {{ selectedAge }}
+                            
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <label for="state">State</label>
+                            <select id="state" name="state" (change)="onStateChange($event)" class="form-control" >
+                                <option *ngFor="let state of states" [value]="state.code">{{ state.name }}</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <label for="country">Country</label>
+                            <select id="country" name="country" (change)="onCountryChange($event)" class="form-control" >
+                                <option *ngFor="let country of countries" [value]="country.code">{{ country.name }}</option>
+                            </select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <label for="addressType">Address Type</label>
+                            <select formControlName="addressType" class="form-control">
+                                <option value="Home">Home</option>
+                                <option value="Company">Company</option>
+                            </select>
+                         </div>
+  
+                        <div class="form-group" *ngIf="registerForm && registerForm.get('addressType')?.value === 'Home'">
+                            <label for="homeAddress1">Home Address 1</label>
+                            <input type="text" formControlName="homeAddress1" class="form-control">
+                        </div>
+  
+                        <div class="form-group" *ngIf="registerForm && registerForm.get('addressType')?.value === 'Home'">
+                            <label for="homeAddress2">Home Address 2</label>
+                            <input type="text" formControlName="homeAddress2" class="form-control">
+                         </div>
+  
+                        <div class="form-group" *ngIf="registerForm && registerForm.get('addressType')?.value === 'Company'">
+                            <label for="companyAddress1">Company Address 1</label>
+                            <input type="text" formControlName="companyAddress1" class="form-control">
+                        </div>
+  
+                        <div class="form-group" *ngIf="registerForm && registerForm.get('addressType')?.value === 'Company'">
+                            <label for="companyAddress2">Company Address 2</label>
+                            <input type="text" formControlName="companyAddress2" class="form-control">
+                        </div>
+                    </td>
+                </tr>
+
+               <tr>
+                    <td></td>
+                    <td colspan="2">
+                         <div class="form-group">
+                            <mat-form-field >
+                                <mat-label style="padding-top: 1vw;">tags</mat-label>
+                                <input placeholder="tag" type="text"
+                                    [matChipInputFor]="chipGrid"
+                                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                    [matChipInputAddOnBlur]="addOnBlur"
+                                    (matChipInputTokenEnd)="add($event)"/>
+                                    <mat-chip-grid #chipGrid aria-label="Enter tags">
+                                    @for (tag of tags; track tag) {
+                                        <mat-chip-row
+                                        (removed)="remove(tag)"
+                                        >
+                                        {{tag.name}}
+                                        <button matChipRemove [attr.aria-label]="'remove ' + tag.name">
+                                            <mat-icon style="height: auto;">X</mat-icon>
+                                        </button>
+                                        </mat-chip-row>
+                                    }
+                                </mat-chip-grid>
+                            </mat-form-field> 
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    <td colspan="2">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" formControlName="isSubscribed">
+                                Subscribe To NewsLetter
+                            </label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-primary" (click)="onSubmit()">Submit</button>
+        <button class="btn btn-primary" (click)="modal.dismiss('Cross click')">Cancel</button>
+    </div>
+
+</ng-template>

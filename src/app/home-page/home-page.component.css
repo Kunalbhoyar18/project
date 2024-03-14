@@ -1,0 +1,140 @@
+    .slidecontainer {
+        width: 100%;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 15px;
+        border-radius: 5px;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider:hover {
+        opacity: 1;
+    }
+
+    .slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    .slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: #04AA6D;
+        cursor: pointer;
+    }
+
+    *{ 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+    } 
+
+    body { 
+        font-family: Arial, sans-serif; 
+        background-color: #f4f4f4; 
+        line-height: 1.6; 
+        color: #333; 
+    } 
+
+    header { 
+        background-color: #46812a; 
+        color: #fff; 
+        text-align: center; 
+        padding: 1rem 0; 
+    } 
+
+    nav ul { 
+        list-style: none; 
+        display: flex; 
+        justify-content: end; 
+        background-color: #b1adad;
+        padding: 0.5rem 0; 
+    } 
+
+    nav li { 
+        margin-right: 20px; 
+    } 
+
+    nav a { 
+        text-decoration: none; 
+        color: #fff; 
+        font-weight: bold; 
+        transition: color 0.3s; 
+    } 
+
+    nav a:hover { 
+        color: #29bfdda1; 
+    } 
+
+    .search { 
+        text-align: center; 
+        margin-top: 2rem; 
+    } 
+
+    .search h2 { 
+        font-size: 24px; 
+        margin-bottom: 1rem; 
+    } 
+
+    .search form { 
+        display: flex; 
+        justify-content: center; 
+        align-items: center; 
+    } 
+
+    .search input[type="text"] { 
+        padding: 10px; 
+        margin-right: 10px; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+    } 
+
+    button { 
+        background-color: #29bfdda1;
+        color: #fff; 
+        border: none; 
+        padding: 8px 20px; 
+        border-radius: 4px; 
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+        margin: 19px;
+    } 
+
+    button:hover { 
+        background-color: #29bfdda1;
+    } 
+
+    .modal-header {
+        background: #29bfdda1;
+    }
+
+
+    .modal-body {
+        padding: 11px;
+    }
+
+    .form-group{
+        margin: 2px;
+        padding: 5px
+    }
+
+    .example-chip-list {
+        width: 100%;
+    }
+
+    .error-message {
+        color:red;
+    }
